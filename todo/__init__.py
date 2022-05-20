@@ -16,6 +16,10 @@ def create_app():
     from . import db
 
     db.init_app(app)
+
+    from . import graphs
+
+    app.register_blueprint(graphs.bp)
     
     @app.route("/hola")
     def hola():
